@@ -1,0 +1,12 @@
+# YAML 1.2
+
+seed : !!int 42
+
+timeseries :
+  start : !!float -6.3
+  end : !!float 6.3
+  resolution: !!float 0.01
+
+distribution:
+  mu : !!float 0.0
+  sigma : !!float 0.2
