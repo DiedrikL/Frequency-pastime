@@ -10,3 +10,6 @@ timeseries :
 distribution:
   mu : !!float 0.0
   sigma : !!float 0.2
+
+FFT:
+  threshold: !!float 5e1
