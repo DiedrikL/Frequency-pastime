@@ -1,22 +1,14 @@
 import numpy as np
-import yaml
+import ruamel.yaml
 import matplotlib.pyplot as plt
-from scipy.fft import fft, ifft, fftfreq
-import torch
+from scipy.fft import fft, fftfreq
 
-
-def smooth_signal(t):
-    return np.sin(t)
-
-
-def random_noise(size, seed, mu, sigma):
-    rng = np.random.default_rng(seed)
-    return rng.normal(mu, sigma, size)
-
+from signal import smooth_signal, random_noise
 
 with open("config.yaml", "r") as stream:
     try:
-        settings = (yaml.safe_load(stream))
+        yaml = ruamel.yaml.YAML(typ='rt')
+        settings = yaml.load(stream)
 
     except yaml.YAMLError as exc:
         print(exc)
